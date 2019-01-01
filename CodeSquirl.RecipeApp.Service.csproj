@@ -14,9 +14,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeSquirl.RecipeApp.Model\CodeSquirl.RecipeApp.Model.csproj" />
+    <ProjectReference Include="..\CodeSquirl.RecipeApp.DataProvider\CodeSquirl.RecipeApp.DataProvider.csproj" />
     <ProjectReference Include="..\CodeSquirl.System\CodeSquirl.System.csproj" />
   </ItemGroup>
 </Project>

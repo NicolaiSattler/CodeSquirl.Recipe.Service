@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeSquirl.RecipeApp.Service
@@ -7,7 +8,8 @@ namespace CodeSquirl.RecipeApp.Service
     {
         bool Add(T entity);
         T Get(Guid id);
-        IQueryable<T> Get(Func<T, bool> predicate);
+        IList<T> GetAll();
+        IList<T> Get(Func<T, bool> predicate);
         bool Update(T entity);
         bool Remove(Guid id);
     }
