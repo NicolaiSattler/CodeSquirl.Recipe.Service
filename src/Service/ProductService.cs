@@ -4,16 +4,19 @@ using CodeSquirl.RecipeApp.DataProvider;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using AutoMapper;
 
 namespace CodeSquirl.RecipeApp.Service
 {
     public class ProductService : IRepositoryService<Product>
     {
         private readonly IRepository<ProductDTO> _repository;
+        private readonly IMapper _mapper;
 
-        public ProductService(IRepository<ProductDTO> repository)
+        public ProductService(IRepository<ProductDTO> repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         public bool Add(Product entity)
@@ -51,7 +54,7 @@ namespace CodeSquirl.RecipeApp.Service
 
         public IList<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<IList<Product>>(_repository.GetAll());
         }
 
         public bool Remove(Guid id)

@@ -17,9 +17,7 @@ namespace CodeSquirl.RecipeApp.Service
         protected override void Load(ContainerBuilder builder)
         {
             var mapper = ConfigureAutoMapper();
-            builder.RegisterInstance(mapper).As<IMapper>().SingleInstance();
             builder.RegisterType<ProductService>().As<IRepositoryService<Product>>();
-
             // builder.RegisterType<IRepositoryService<DayPlan>>().As<DayService>();
             // builder.RegisterType<IRepositoryService<GroceryList>>().As<GroceryListService>();
             // builder.RegisterType<IRepositoryService<Ingredient>>().As<IngredientService>();
@@ -27,6 +25,7 @@ namespace CodeSquirl.RecipeApp.Service
             // builder.RegisterType<IRepositoryService<Necessity>>().As<NecessityService>();
             // builder.RegisterType<IRepositoryService<Preparation>>().As<PreparationService>();
             // builder.RegisterType<IRepositoryService<Recipe>>().As<RecipeService>();
+            builder.RegisterInstance(mapper).As<IMapper>().SingleInstance();
         }
     }
 }
