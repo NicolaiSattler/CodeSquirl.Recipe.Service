@@ -17,6 +17,7 @@ namespace CodeSquirl.RecipeApp.Service
         public ServiceMappingProfile()
 	    {
             CreateMap<Product, ProductDTO>();
+            CreateMap<ProductDTO, Product>();
 	    }
     }
 }

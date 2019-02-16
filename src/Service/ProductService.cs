@@ -18,53 +18,54 @@ namespace CodeSquirl.RecipeApp.Service
             _repository = repository;
             _mapper = mapper;
         }
-
+        private ProductDTO CreateDTO(Product entity)
+        {
+            return new ProductDTO
+            {
+                UniqueID = Guid.NewGuid(),
+                Name = entity.Name,
+                Type = (int)entity.Type,
+                Perishable = entity.Perishable,
+                Deleted = false
+            };
+        }
         public bool Add(Product entity)
         {
             try
             {
-                var dto = new ProductDTO
-                {
-                    UniqueID = Guid.NewGuid(),
-                    Name = entity.Name,
-                    Type = (int)entity.Type,
-                    Perishable = entity.Perishable,
-                    Deleted = false
-                };
-                _repository.Add(dto);
-
-                return true;
+                var dto = CreateDTO(entity);
+                return _repository.Add(dto);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                //TODO: Log Exception
                 return false;
             }
+        }
+        public bool AddRange(IEnumerable<Product> entities)
+        {
+            var dtoCollection = entities.Select(CreateDTO);
+            return _repository.AddRange(dtoCollection);
         }
 
         public Product Get(Guid id)
         {
-            throw new NotImplementedException();
-        }
-
-        public IList<Product> Get(Func<Product, bool> predicate)
-        {
-            throw new NotImplementedException();
+            return _mapper.Map<Product>(_repository.GetByID(id));
         }
 
         public IList<Product> GetAll()
         {
-            return _mapper.Map<IList<Product>>(_repository.GetAll());
+            return _mapper.Map<IList<Product>>(_repository.Get());
         }
 
         public bool Remove(Guid id)
         {
-            throw new NotImplementedException();
+            return _repository.Remove(id);
         }
 
         public bool Update(Product entity)
         {
-            throw new NotImplementedException();
+            var dto = _mapper.Map<ProductDTO>(entity);
+            return _repository.Update(dto);
         }
     }
 }
