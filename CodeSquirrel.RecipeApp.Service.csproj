@@ -18,8 +18,8 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodeSquirl.RecipeApp.Model\CodeSquirl.RecipeApp.Model.csproj" />
-    <ProjectReference Include="..\CodeSquirl.RecipeApp.DataProvider\CodeSquirl.RecipeApp.DataProvider.csproj" />
-    <ProjectReference Include="..\CodeSquirl.System\CodeSquirl.System.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.RecipeApp.Model\CodeSquirrel.RecipeApp.Model.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.RecipeApp.DataProvider\CodeSquirrel.RecipeApp.DataProvider.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.System\CodeSquirrel.System.csproj" />
   </ItemGroup>
 </Project>

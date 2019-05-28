@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     public interface IRepositoryService<T> where T : class
     {

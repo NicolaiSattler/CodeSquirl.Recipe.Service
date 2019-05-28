@@ -1,9 +1,9 @@
-﻿using CodeSquirl.System;
-using CodeSquirl.RecipeApp.Model;
+﻿using CodeSquirrel.System;
+using CodeSquirrel.RecipeApp.Model;
 using System;
 using System.Linq;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     // public class PreparationService : IPreparationService
     // {

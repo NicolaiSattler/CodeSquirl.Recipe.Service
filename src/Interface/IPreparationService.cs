@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using CodeSquirl.RecipeApp.Model;
+using CodeSquirrel.RecipeApp.Model;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     public interface IPreparationService
     {

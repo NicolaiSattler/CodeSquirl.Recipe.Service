@@ -1,8 +1,8 @@
 using AutoMapper;
-using CodeSquirl.RecipeApp.DataProvider;
-using CodeSquirl.RecipeApp.Model;
+using CodeSquirrel.RecipeApp.DataProvider;
+using CodeSquirrel.RecipeApp.Model;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     public class ServiceMappingProfile : Profile
     {

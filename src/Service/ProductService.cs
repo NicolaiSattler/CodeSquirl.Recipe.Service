@@ -1,12 +1,12 @@
-﻿using CodeSquirl.System;
-using CodeSquirl.RecipeApp.Model;
-using CodeSquirl.RecipeApp.DataProvider;
+﻿using CodeSquirrel.System;
+using CodeSquirrel.RecipeApp.Model;
+using CodeSquirrel.RecipeApp.DataProvider;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using AutoMapper;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     public class ProductService : IRepositoryService<Product>
     {
@@ -31,15 +31,8 @@ namespace CodeSquirl.RecipeApp.Service
         }
         public bool Add(Product entity)
         {
-            try
-            {
-                var dto = CreateDTO(entity);
-                return _repository.Add(dto);
-            }
-            catch(Exception)
-            {
-                return false;
-            }
+            var dto = CreateDTO(entity);
+            return _repository.Add(dto);
         }
         public bool AddRange(IEnumerable<Product> entities)
         {

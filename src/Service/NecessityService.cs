@@ -1,43 +1,66 @@
-﻿using CodeSquirl.System;
-using CodeSquirl.RecipeApp.Model;
+﻿using AutoMapper;
+using CodeSquirrel.System;
+using CodeSquirrel.RecipeApp.DataProvider;
+using CodeSquirrel.RecipeApp.Model;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
-    // public class NecessityService : IRepositoryService<Necessity>
-    // {
-    //     private readonly IRepository _repository;
+    public class NecessityService : IRepositoryService<Necessity>
+    {
+        private readonly IRepository<NecessityDTO> _repository;
+        private readonly IMapper _mapper;
 
-    //     public NecessityService(IRepository repositoy)
-    //     {
-    //         _repository = repositoy;
-    //     }
+        public NecessityService(IRepository<NecessityDTO> repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
 
-    //     public bool Add(Necessity appliance)
-    //     {
-    //         _repository.Add(appliance);
-    //         return _repository.SaveChanges() > 0;
-    //     }
-    //     public Necessity Get(Guid id)
-    //     {
-    //         return Get(a => a.UniqueID == id)?.FirstOrDefault();
-    //     }
+        private NecessityDTO CreateDTO(Necessity entity)
+        {
+            return new NecessityDTO
+            {
+                UniqueID = Guid.NewGuid(),
+                Name = entity.Name,
+                Description = entity.Description,
+                Electrical = entity.Electrical,
+                Deleted = false
+            };
+        }
+        public bool Add(Necessity entity)
+        {
+            var dto = CreateDTO(entity);
+            return _repository.Add(dto);
+        }
 
-    //     public IQueryable<Necessity> Get(Func<Necessity, bool> predicate)
-    //     {
-    //         return _repository.Get(predicate);
-    //     }
-    //     public bool Update(Necessity appliance)
-    //     {
-    //         _repository.Update(appliance);
-    //         return _repository.SaveChanges() > 0;
-    //     }
+        public bool AddRange(IEnumerable<Necessity> entities)
+        {
+            var dtoCollection = entities.Select(CreateDTO);
+            return _repository.AddRange(dtoCollection);
+        }
 
-    //     public bool Remove(Guid id)
-    //     {
-    //         _repository.Remove<Necessity>(a => a.UniqueID == id);
-    //         return _repository.SaveChanges() > 0;
-    //     }
-    // }
+        public Necessity Get(Guid id)
+        {
+            return _mapper.Map<Necessity>(_repository.GetByID(id));
+        }
+
+        public IList<Necessity> GetAll()
+        {
+            return _mapper.Map<IList<Necessity>>(_repository.Get());
+        }
+
+        public bool Remove(Guid id)
+        {
+            return _repository.Remove(id);
+        }
+
+        public bool Update(Necessity entity)
+        {
+            var dto = _mapper.Map<NecessityDTO>(entity);
+            return _repository.Update(dto);
+        }
+    }
 }

@@ -1,10 +1,10 @@
-﻿using CodeSquirl.System;
-using CodeSquirl.RecipeApp.Model;
-using CodeSquirl.RecipeApp.DataProvider;
+﻿using CodeSquirrel.System;
+using CodeSquirrel.RecipeApp.Model;
+using CodeSquirrel.RecipeApp.DataProvider;
 using System;
 using System.Linq;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     // public class RecipeService : IRepositoryService<Recipe>
     // {

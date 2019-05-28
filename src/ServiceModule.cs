@@ -1,8 +1,8 @@
 using Autofac;
 using AutoMapper;
-using CodeSquirl.RecipeApp.Model;
+using CodeSquirrel.RecipeApp.Model;
 
-namespace CodeSquirl.RecipeApp.Service
+namespace CodeSquirrel.RecipeApp.Service
 {
     public class ServiceModule : Module 
     {
