@@ -36,7 +36,7 @@ namespace CodeSquirrel.RecipeApp.Service
         }
         public bool AddRange(IEnumerable<Product> entities)
         {
-            var dtoCollection = entities.Select(CreateDTO);
+            var dtoCollection = entities.Select(CreateDTO).ToList();
             return _repository.AddRange(dtoCollection);
         }
 

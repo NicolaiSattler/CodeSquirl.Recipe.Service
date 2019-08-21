@@ -18,6 +18,8 @@ namespace CodeSquirrel.RecipeApp.Service
 	    {
             CreateMap<Product, ProductDTO>();
             CreateMap<ProductDTO, Product>();
+            CreateMap<Necessity, NecessityDTO>();
+            CreateMap<NecessityDTO, Necessity>();
 	    }
     }
 }

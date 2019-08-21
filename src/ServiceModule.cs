@@ -18,13 +18,7 @@ namespace CodeSquirrel.RecipeApp.Service
         {
             var mapper = ConfigureAutoMapper();
             builder.RegisterType<ProductService>().As<IRepositoryService<Product>>();
-            // builder.RegisterType<IRepositoryService<DayPlan>>().As<DayService>();
-            // builder.RegisterType<IRepositoryService<GroceryList>>().As<GroceryListService>();
-            // builder.RegisterType<IRepositoryService<Ingredient>>().As<IngredientService>();
-            // builder.RegisterType<IRepositoryService<Meal>>().As<MealService>();
-            // builder.RegisterType<IRepositoryService<Necessity>>().As<NecessityService>();
-            // builder.RegisterType<IRepositoryService<Preparation>>().As<PreparationService>();
-            // builder.RegisterType<IRepositoryService<Recipe>>().As<RecipeService>();
+            builder.RegisterType<NecessityService>().As<IRepositoryService<Necessity>>();
             builder.RegisterInstance(mapper).As<IMapper>().SingleInstance();
         }
     }

@@ -13,13 +13,13 @@
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeSquirrel.RecipeApp.Model\CodeSquirrel.RecipeApp.Model.csproj" />
-    <ProjectReference Include="..\CodeSquirrel.RecipeApp.DataProvider\CodeSquirrel.RecipeApp.DataProvider.csproj" />
-    <ProjectReference Include="..\CodeSquirrel.System\CodeSquirrel.System.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.RecipeApp.DataProvider\Code\CodeSquirrel.RecipeApp.DataProvider.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.System\Code\CodeSquirrel.System.csproj" />
   </ItemGroup>
 </Project>
