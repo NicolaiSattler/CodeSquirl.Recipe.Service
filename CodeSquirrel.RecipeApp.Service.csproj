@@ -6,20 +6,20 @@
     <Description></Description>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
     <VersionPrefix>1.0.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
-    <PackageReference Include="AutoMapper" Version="8.0.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodeSquirrel.RecipeApp.Model\CodeSquirrel.RecipeApp.Model.csproj" />
-    <ProjectReference Include="..\CodeSquirrel.RecipeApp.DataProvider\Code\CodeSquirrel.RecipeApp.DataProvider.csproj" />
-    <ProjectReference Include="..\CodeSquirrel.System\Code\CodeSquirrel.System.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.Recipe.Model\CodeSquirrel.RecipeApp.Model.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.Recipe.DataProvider\Code\CodeSquirrel.RecipeApp.DataProvider.csproj" />
+    <ProjectReference Include="..\CodeSquirrel.System\CodeSquirrel.System.csproj" />
   </ItemGroup>
 </Project>
